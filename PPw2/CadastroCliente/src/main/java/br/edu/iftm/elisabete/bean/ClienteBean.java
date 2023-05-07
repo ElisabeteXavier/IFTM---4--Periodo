@@ -4,7 +4,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import br.edu.iftm.elisabete.entity.Cliente;
-import br.edu.iftm.elisabete.logic.ClienteLogic
+import br.edu.iftm.elisabete.logic.ClienteLogic;
 
 
     

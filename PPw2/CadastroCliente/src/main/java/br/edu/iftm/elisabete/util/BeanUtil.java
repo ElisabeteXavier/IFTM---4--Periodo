@@ -1,13 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.iftm.elisabete.util;
 
-/**
- *
- * @author elisabete
- */
-public class BeanUtil {
+import java.io.Serializable;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
+
+public class BeanUtil implements Serializable {
     
+    public void addMessage(FacesMessage.Severity tipo, String resumo, String detalhe){
+        FacesMessage message = new FacesMessage(tipo, resumo, detalhe);
+        FacesContext.getCurrentInstance().addMessage(null, message);
+    }
+    
+    public void addInfo(String resumo, String detalhe) {
+        addMessage(FacesMessage.SEVERITY_INFO, resumo, detalhe);
+    }
+    public void addInfo(String message) {
+        addInfo("Info", message);
+    }
+    
+    public void addAviso(String resumo, String detalhe) {
+        addMessage(FacesMessage.SEVERITY_WARN, resumo, detalhe);
+    }
+    public void addAviso(String message) {
+        addAviso("Aviso", message);
+    }
+    public void addError(String resumo, String detalhe) {
+        addMessage(FacesMessage.SEVERITY_ERROR, resumo, detalhe);
+    }
+    public void addError(String message){
+        addError("Erro", message);
+    }
 }
+
