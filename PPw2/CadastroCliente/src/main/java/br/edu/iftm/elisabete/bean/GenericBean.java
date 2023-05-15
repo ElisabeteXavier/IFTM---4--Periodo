@@ -19,15 +19,7 @@ public abstract class GenericBean<E, L extends GenericLogic<E>> extends BeanUtil
     @Getter
     private List<E> entitys;
     
-    @Getter
-    private Estado estado = Estado.PESQUISANDO;
-       
-    enum Estado {
-        CRIANDO,
-        EDITANDO,
-        PESQUISANDO
-    }
-    
+        
     public void newInstanceOfEntity(){
         try {
             entity = (E) getClassEntity().getConstructors()[0].newInstance();
@@ -36,21 +28,22 @@ public abstract class GenericBean<E, L extends GenericLogic<E>> extends BeanUtil
         }
     }
     
-    public void novo(){
+    public String novo(){
         newInstanceOfEntity();
-        estado = Estado.CRIANDO;
+        return "cliente";
+     
     }
   
     public void salvar(){
         getLogic().salvar(entity);
         addInfo("Salvo com sucesso.");
         newInstanceOfEntity();
-        estado = Estado.PESQUISANDO;
+         listar();      
     }
     
     
     public void listar(){
-        estado = Estado.PESQUISANDO;
+       
         entitys = getLogic().listar();
     }
     
@@ -60,7 +53,7 @@ public abstract class GenericBean<E, L extends GenericLogic<E>> extends BeanUtil
     }
     public void editar(E entity) {
         this.entity = entity;
-        estado = Estado.EDITANDO;
+     
     }
     public abstract L getLogic();
     public abstract Class<E> getClassEntity();

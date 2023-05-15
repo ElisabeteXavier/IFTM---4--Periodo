@@ -7,7 +7,6 @@ import br.edu.iftm.elisabete.entity.Cliente;
 import br.edu.iftm.elisabete.logic.ClienteLogic;
 
 
-    
 @Named
 @SessionScoped
 public class ClienteBean extends GenericBean<Cliente, ClienteLogic>{

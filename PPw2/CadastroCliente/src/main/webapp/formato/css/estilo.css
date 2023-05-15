@@ -1,6 +1,6 @@
-:root {
-    /* --background: #222832;
-    --color: #fff; */
+/*:root {
+     --background: #222832;
+    --color: #fff; 
     --background: linear-gradient(45deg, #8BC34A, #009688);
     --background-menu: linear-gradient(45deg, #653f95, #4bb2bf);
     ;
@@ -102,7 +102,7 @@ footer p {
     display: block;
     padding-left: 10px;
     border-left: 4px solid transparent;
-    width: calc(100% - 14px); /* 10px padding + 4px border */
+    width: calc(100% - 14px);  10px padding + 4px border 
     overflow: hidden;
     line-height: 3em;
     display: flex;
@@ -142,4 +142,11 @@ header.collapse-menu, footer.collapse-menu, main.collapse-menu {
     }
 
 
+}*/
+
+.paragrafo-destaque {
+    color: blue;
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.5;
 }

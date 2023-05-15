@@ -10,33 +10,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sistema Cadastro Cliente IFTM 2023/01</title>
-       
+      
     </h:head>
     <h:body>   
         <header>
             <div class="card">
                 <h:form>
-                    <p:growl id="messages"/>
-
+<!--                    <p:growl id="messages">
+                        <p:autoUpdate></p:autoUpdate>
+                    </p:growl>-->
                     <p:menubar>
                         <p:submenu label="File" icon="pi pi-fw pi-file">
-                            <p:submenu label="New" icon="pi pi-fw pi-plus">
-                                <p:menuitem value="Cliente" icon="pi pi-fw pi-user-plus" url="Cliente.xhtml"  />
-                            </p:submenu>                            
+                            <p:menuitem value="Cliente" icon="pi pi-fw pi-user-plus"  ajax ="ajax;" action="#{clienteBean.novo()}"  />
                         </p:submenu>
                         <p:divider layout="vertical"/>
                         <p:menuitem value="Voltar" icon="pi pi-fw pi-chevron-left" url="index.xhtml"/>
-
                     </p:menubar>
+
                 </h:form>                               
             </div>
 
         </header>
-        
-         <div id="content">
+
+        <div id="content">
             <ui:insert name="conteudo"/>
         </div>   
-       
+
         <script src="https://kit.fontawesome.com/dcdd1dcc23.js" crossorigin="anonymous"></script>
         <h:outputScript library="financeiro" name="js/script.js"></h:outputScript>
     </h:body>
